@@ -44,6 +44,9 @@ class Ausencia(models.Model):
     matricula_aluno = models.ForeignKey(Alunos, on_delete=models.CASCADE, help_text="Matrícula do aluno.")
     data_ausencia = models.DateField(null=False, default=timezone.now(),help_text="Data da falta do aluno.")
     
+    # metodo que traz o resultado a string represeentando o objeto
     def _str_(self):
         resposta = f' Turma:{self.numero_turma} - Aluno:{self.matricula_aluno} - Ausencia:{self.data_ausencia.strftime("%d/%m/%y")}'
         return resposta
+    
+    
