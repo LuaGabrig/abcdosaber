@@ -4,5 +4,5 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-def Listar(request):
+def listar(request):
     return HttpResponse("Listar")
