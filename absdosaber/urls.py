@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic import RedirectView
+from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -24,16 +24,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('tipoatividade/', include('tipodeatividade.urls')),
     path('instrutor/', include('instrutores.urls')),
-    path('aluno/', include('alunos.urls')),
+    path('aluno/', include('alunos.urls', namespace='aluno')),
     path('turma/', include('turmas.urls')),
     path('titulo/', include ('titulo.urls')),
-
- 
- 
-]
-
-urlpatterns += [
-    path('', RedirectView.as_view(url="turma/", permanent=True)),
+    path('', TemplateView.as_view(template_name="escola.html")),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

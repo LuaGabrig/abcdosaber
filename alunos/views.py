@@ -6,4 +6,8 @@ from alunos.models import Alunos
 
 def listar(request):
     lista_alunos = Alunos.objects.all()
-    return HttpResponse(lista_alunos)
+    contexto= {
+       'alunos': lista_alunos,
+   }
+    
+    return render(request, 'aluno/listarAluno.html', context=contexto)
