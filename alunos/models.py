@@ -10,7 +10,7 @@ class Alunos(models.Model):
         
     dataInicial = models.DateField(null=False, help_text='Data Inicial')
     
-    dataFinal = models.DateField(help_text='Data Final')
+    dataFinal = models.DateField(null=True, blank=True, help_text='Data Final')
 
     
     def _str_(self):

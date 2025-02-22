@@ -48,22 +48,16 @@
 
             <!-- linhas -->
             {% for aluno in alunos%}
-            <tr>
-                <td> 1 </td>
-                <td> Marcos Ferreira </td>
-                <td> 01/10/2021 </td>
-                <td> -- </td>
-                <td> SIM </td>
-            </tr>
-            {% endfor %}
            
-            <tr>
-            <td> {{aluno.matricula}} </td>
-            <td> {{aluno.nome}} </td>
-            <td> {{aluno.data_inicial|date:"d/m/Y"}} </td>
-            <td> {% if aluno.data_final %} {{ aluno.data_final|date:"d/m/Y"}} {% else %} --- {% endif %}</td>
-            <td> -- </td>
-            </tr>
+                <tr>
+                    <td> {{aluno.matricula}} </td>
+                    <td> {{aluno.nome}} </td>
+                    <td> {{aluno.dataInicial|date:"d/m/Y"}} </td>
+                    <td> {% if aluno.dataFinal %} {{ aluno.dataFinal|date:"d/m/Y"}} {% else %} --- {% endif %}</td>
+                    <td> -- </td>
+                </tr>
+            {% endfor %}
+
         </table>
 
     </div>
