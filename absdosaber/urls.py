@@ -23,11 +23,11 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tipoatividade/', include('tipodeatividade.urls', namespace='tipodeatividade')),
-    path('instrutor/', include('instrutores.urls')),
-    path('aluno/', include('alunos.urls', namespace='aluno')),
-    path('turma/', include('turmas.urls')),
-    path('titulo/', include ('titulo.urls')),
-    path('', TemplateView.as_view(template_name="escola.html")),
+    path('instrutor/', include('instrutores.urls', namespace='instrutores')),
+    path('alunos/', include('alunos.urls', namespace='alunos')),
+    path('turmas/', include('turmas.urls', namespace='turmas')),
+    path('titulo/', include ('titulo.urls', namespace='titulo')),
+    path('escola/', TemplateView.as_view(template_name="escola.html")),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
